@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- application general -->
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <!-- title screen -->
+    <color name="title_background">#FFFFFF</color>
+    <color name="title_text_color">#190707</color>
+    <color name="title_text_shadow_color">#696969</color>
+    <color name="title_easy_button_text_color">#CEE3F6</color>
+    <color name="title_normal_button_text_color">#CEF6CE</color>
+    <color name="title_hard_button_text_color">#F5A9A9</color>
+
+    <!-- sudoku screen -->
+    <color name="sudoku_background">#EFFBFB</color>
+    <color name="sudoku_stage_no_text_color">#190707</color>
+
+    <!-- sudoku grid -->
+    <color name="sudoku_grid_button_background">#FFFFFF</color>
+    <color name="sudoku_grid_outline_black">#190707</color>
+    <color name="sudoku_grid_outline_gray">#F2F2F2</color>
+</resources>

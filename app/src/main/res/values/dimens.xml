@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- title screen -->
+    <dimen name="title_font_size">70sp</dimen>
+    <dimen name="title_margin_side">10dp</dimen>
+    <dimen name="button_text_size">30sp</dimen>
+    <dimen name="button_width">120dp</dimen>
+
+    <!-- sudoku screen -->
+    <dimen name="sudoku_grid_margin_side">10dp</dimen>
+    <dimen name="sudoku_grid_cell_width">0dp</dimen>
+    <dimen name="sudoku_grid_outline">1dp</dimen>
+    <dimen name="sudoku_grid_font_size">10sp</dimen>
+</resources>
