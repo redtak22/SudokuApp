@@ -1,13 +1,11 @@
 package com.example.sudokuapp.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.sudokuapp.R
 import com.example.sudokuapp.activity.MainActivity
-import com.example.sudokuapp.activity.SudokuActivity
 import com.example.sudokuapp.log.SudokuAppLog
 import kotlinx.android.synthetic.main.title_fragment.*
 

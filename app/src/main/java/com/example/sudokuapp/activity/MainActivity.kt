@@ -53,8 +53,6 @@ class MainActivity : BaseActivity() {
     fun changeActivity(type: Int) {
         SudokuAppLog.enter(TAG, "changeActivity")
 
-        finish()
-
         var intent : Intent? = null
         when (type) {
             // for easy sudoku screen

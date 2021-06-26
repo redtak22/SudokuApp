@@ -2,8 +2,9 @@
 <!-- sudoku grid fragment layout -->
 <TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:id="@+id/sudoku_grid_table_layout"
+    android:layout_width="@dimen/sudoku_grid_width_height"
+    android:layout_height="@dimen/sudoku_grid_width_height">
 
     <TextView
         android:layout_width="match_parent"
@@ -13,107 +14,107 @@
     <!-- row 1 -->
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="wrap_content">
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
+        <com.example.sudokuapp.view.SudokuGridButton
             android:id="@+id/sudoku_grid_1_1"
+            android:tag="1-1"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
             android:textSize="@dimen/sudoku_grid_font_size"
-            android:text="1"
-            android:layout_weight="1"/>
+            android:text="1"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_1_2"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_2_1"
+            android:tag="2-1"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_1_3"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_3_1"
+            android:tag="3-1"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_1_4"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_4_1"
+            android:tag="4-1"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_1_5"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_5_1"
+            android:tag="5-1"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_1_6"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_6_1"
+            android:tag="6-1"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_1_7"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_7_1"
+            android:tag="7-1"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_1_8"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_8_1"
+            android:tag="8-1"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_1_9"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_9_1"
+            android:tag="9-1"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
@@ -133,101 +134,101 @@
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_2_1"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_1_2"
+            android:tag="1-2"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
+        <com.example.sudokuapp.view.SudokuGridButton
             android:id="@+id/sudoku_grid_2_2"
+            android:tag="2-2"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_2_3"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_3_2"
+            android:tag="3-2"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_2_4"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_4_2"
+            android:tag="4-2"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_2_5"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_5_2"
+            android:tag="5-2"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_2_6"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_6_2"
+            android:tag="6-2"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_2_7"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_7_2"
+            android:tag="7-2"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_2_8"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_8_2"
+            android:tag="8-2"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_2_9"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_9_2"
+            android:tag="9-2"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
@@ -247,101 +248,101 @@
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_3_1"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_1_3"
+            android:tag="1-3"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_3_2"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_2_3"
+            android:tag="2-3"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
+        <com.example.sudokuapp.view.SudokuGridButton
             android:id="@+id/sudoku_grid_3_3"
+            android:tag="3-3"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_3_4"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_4_3"
+            android:tag="4-3"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_3_5"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_5_3"
+            android:tag="5-3"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_3_6"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_6_3"
+            android:tag="6-3"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_3_7"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_7_3"
+            android:tag="7-3"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_3_8"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_8_3"
+            android:tag="8-3"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_3_9"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_9_3"
+            android:tag="9-3"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
@@ -361,101 +362,101 @@
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_4_1"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_1_4"
+            android:tag="1-4"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_4_2"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_2_4"
+            android:tag="2-4"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_4_3"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_3_4"
+            android:tag="3-4"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
+        <com.example.sudokuapp.view.SudokuGridButton
             android:id="@+id/sudoku_grid_4_4"
+            android:tag="4-4"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_4_5"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_5_4"
+            android:tag="5-4"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_4_6"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_6_4"
+            android:tag="6-4"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_4_7"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_7_4"
+            android:tag="7-4"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_4_8"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_8_4"
+            android:tag="8-4"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_4_9"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_9_4"
+            android:tag="9-4"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
@@ -475,101 +476,101 @@
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_5_1"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_1_5"
+            android:tag="1-5"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_5_2"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_2_5"
+            android:tag="2-5"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_5_3"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_3_5"
+            android:tag="3-5"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_5_4"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_4_5"
+            android:tag="4-5"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
+        <com.example.sudokuapp.view.SudokuGridButton
             android:id="@+id/sudoku_grid_5_5"
+            android:tag="5-5"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_5_6"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_6_5"
+            android:tag="6-5"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_5_7"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_7_5"
+            android:tag="7-5"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_5_8"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_8_5"
+            android:tag="8-5"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_5_9"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_9_5"
+            android:tag="9-5"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
@@ -589,101 +590,101 @@
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_6_1"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_1_6"
+            android:tag="1-6"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_6_2"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_2_6"
+            android:tag="2-6"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_6_3"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_3_6"
+            android:tag="3-6"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_6_4"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_4_6"
+            android:tag="4-6"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_6_5"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_5_6"
+            android:tag="5-6"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
+        <com.example.sudokuapp.view.SudokuGridButton
             android:id="@+id/sudoku_grid_6_6"
+            android:tag="6-6"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_6_7"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_7_6"
+            android:tag="7-6"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_6_8"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_8_6"
+            android:tag="8-6"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_6_9"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_9_6"
+            android:tag="9-6"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
@@ -703,101 +704,101 @@
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_7_1"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_1_7"
+            android:tag="1-7"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_7_2"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_2_7"
+            android:tag="2-7"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_7_3"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_3_7"
+            android:tag="3-7"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_7_4"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_4_7"
+            android:tag="4-7"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_7_5"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_5_7"
+            android:tag="5-7"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_7_6"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_6_7"
+            android:tag="6-7"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
+        <com.example.sudokuapp.view.SudokuGridButton
             android:id="@+id/sudoku_grid_7_7"
+            android:tag="7-7"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_7_8"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_8_7"
+            android:tag="8-7"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_7_9"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_9_7"
+            android:tag="9-7"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
@@ -817,101 +818,101 @@
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_8_1"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_1_8"
+            android:tag="1-8"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_8_2"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_2_8"
+            android:tag="2-8"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_8_3"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_3_8"
+            android:tag="3-8"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_8_4"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_4_8"
+            android:tag="4-8"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_8_5"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_5_8"
+            android:tag="5-8"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_8_6"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_6_8"
+            android:tag="6-8"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_8_7"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_7_8"
+            android:tag="7-8"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
+        <com.example.sudokuapp.view.SudokuGridButton
             android:id="@+id/sudoku_grid_8_8"
+            android:tag="8-8"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_8_9"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_9_8"
+            android:tag="9-8"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
@@ -931,101 +932,101 @@
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_9_1"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_1_9"
+            android:tag="1-9"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_9_2"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_2_9"
+            android:tag="2-9"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_9_3"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_3_9"
+            android:tag="3-9"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_9_4"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_4_9"
+            android:tag="4-9"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_9_5"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_5_9"
+            android:tag="5-9"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_9_6"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_6_9"
+            android:tag="6-9"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_black"/>
-        <Button
-            android:id="@+id/sudoku_grid_9_7"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_7_9"
+            android:tag="7-9"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
-            android:id="@+id/sudoku_grid_9_8"
+        <com.example.sudokuapp.view.SudokuGridButton
+            android:id="@+id/sudoku_grid_8_9"
+            android:tag="8-9"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"
             android:background="@color/sudoku_grid_outline_gray"/>
-        <Button
+        <com.example.sudokuapp.view.SudokuGridButton
             android:id="@+id/sudoku_grid_9_9"
+            android:tag="9-9"
             android:layout_width="@dimen/sudoku_grid_cell_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/sudoku_grid_cell_height"
             android:background="@color/sudoku_grid_button_background"
-            android:textSize="@dimen/sudoku_grid_font_size"
-            android:layout_weight="1"/>
+            android:textSize="@dimen/sudoku_grid_font_size"/>
         <TextView
             android:layout_width="@dimen/sudoku_grid_outline"
             android:layout_height="match_parent"

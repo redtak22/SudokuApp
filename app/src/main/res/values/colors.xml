@@ -21,4 +21,8 @@
     <color name="sudoku_grid_button_background">#FFFFFF</color>
     <color name="sudoku_grid_outline_black">#190707</color>
     <color name="sudoku_grid_outline_gray">#F2F2F2</color>
+    <color name="sudoku_grid_focus_cell_matrix_background">#F6E3CE</color>
+    <color name="sudoku_grid_focus_cell_background">#FAAC58</color>
+    <color name="sudoku_grid_same_number_cell_background">#F5D0A9</color>
+    <color name="sudoku_grid_answer_cell_text_color">#819FF7</color>
 </resources>

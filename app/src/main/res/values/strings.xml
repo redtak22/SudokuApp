@@ -21,4 +21,8 @@
     <string name="sudoku_number_button_9">9</string>
     <string name="sudoku_eraser_button">消す</string>
     <string name="sudoku_back_button">一つ戻す</string>
+    <string name="sudoku_empty_cell">" "</string>
+    <string name="sudoku_hint_cell_update_alert_toast_message">空欄のマスを埋めようね！</string>
+    <string name="sudoku_hint_cell_erase_alert_toast_message">このマスは消せないよ！</string>
+    <string name="sudoku_back_button_under_construction_toast_message">まだ未実装だから二度と押さないでね！</string>
 </resources>
