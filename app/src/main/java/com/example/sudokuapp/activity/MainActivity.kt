@@ -2,7 +2,6 @@ package com.example.sudokuapp.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import com.example.sudokuapp.R
 import com.example.sudokuapp.fragment.MainFragment
 import com.example.sudokuapp.log.SudokuAppLog
@@ -14,14 +13,6 @@ class MainActivity : BaseActivity() {
 
     /** TAG */
     private val TAG = "MainActivity"
-
-    /** screen kind */
-    val SUDOKU_EASY = 0
-    val SUDOKU_NORMAL = 1
-    val SUDOKU_HARD = 2
-
-    /** easy button */
-    private lateinit var mEasyButton : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         SudokuAppLog.enter(TAG, "onCreate")
@@ -53,18 +44,29 @@ class MainActivity : BaseActivity() {
     fun changeActivity(type: Int) {
         SudokuAppLog.enter(TAG, "changeActivity")
 
-        var intent : Intent? = null
+        // set difficulty type
         when (type) {
             // for easy sudoku screen
             SUDOKU_EASY -> {
                 SudokuAppLog.debug(TAG, "changeActivity: screen type is sudoku easy")
-                intent = Intent(this, SudokuActivity::class.java)
+                mDifficultyStatus = SUDOKU_EASY
+            }
+            // for easy sudoku screen
+            SUDOKU_NORMAL -> {
+                SudokuAppLog.debug(TAG, "changeActivity: screen type is sudoku normal")
+                mDifficultyStatus = SUDOKU_NORMAL
+            }
+            // for hard sudoku screen
+            SUDOKU_NORMAL -> {
+                SudokuAppLog.debug(TAG, "changeActivity: screen type is sudoku hard")
+                mDifficultyStatus = SUDOKU_HARD
             }
             // other
             else -> {
                 SudokuAppLog.warning(TAG, "changeActivity: change kind is incorrect")
             }
         }
+        val intent = Intent(this, SudokuActivity::class.java)
         startActivity(intent)
 
         SudokuAppLog.exit(TAG, "changeActivity")

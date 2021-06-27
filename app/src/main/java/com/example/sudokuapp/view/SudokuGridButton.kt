@@ -9,10 +9,11 @@ import androidx.appcompat.widget.AppCompatButton
  * sudoku grid button class.
  */
 class SudokuGridButton : AppCompatButton {
+
     /** hint number */
     var mHintNumber: String? = null
-    /** correct number */
-    var mCorrectNumber: String? = null
+    /** answer number */
+    var mAnswerNumber: String? = null
 
     constructor(context: Context?) : super(context!!)
     constructor(context: Context?, attrs: AttributeSet?) : super(context!!, attrs)

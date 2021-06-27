@@ -54,6 +54,20 @@ class MainFragment : BaseFragment() {
             // change to sudoku screen
             mActivity.changeActivity(mActivity.SUDOKU_EASY)
         }
+        // normal button tapped
+        normal_button.setOnClickListener {
+            SudokuAppLog.debug(TAG, "normal button tapped.")
+            // TODO: use Fragment
+            // change to sudoku screen
+            mActivity.changeActivity(mActivity.SUDOKU_NORMAL)
+        }
+        // hard button tapped
+        hard_button.setOnClickListener {
+            SudokuAppLog.debug(TAG, "normal button tapped.")
+            // TODO: use Fragment
+            // change to sudoku screen
+            mActivity.changeActivity(mActivity.SUDOKU_HARD)
+        }
 
         SudokuAppLog.exit(TAG, "onCreateView")
     }

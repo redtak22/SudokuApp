@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import com.example.sudokuapp.R
 import com.example.sudokuapp.activity.SudokuActivity
 import com.example.sudokuapp.log.SudokuAppLog
@@ -61,6 +62,28 @@ class SudokuFragment : BaseFragment(), View.OnClickListener {
         SudokuAppLog.enter(TAG, "onCreateView")
         super.onViewCreated(view, savedInstanceState)
 
+        // set difficulty text
+        var difficultyTextId: Int? = null
+        when (mActivity.mDifficultyStatus) {
+            // easy
+            mActivity.SUDOKU_EASY -> {
+                difficultyTextId = R.string.sudoku_difficulty_easy
+            }
+            // normal
+            mActivity.SUDOKU_NORMAL -> {
+                difficultyTextId = R.string.sudoku_difficulty_normal
+            }
+            // hard
+            mActivity.SUDOKU_HARD -> {
+                difficultyTextId = R.string.sudoku_difficulty_hard
+            }
+        }
+        stage_no.text = mActivity.getString(difficultyTextId!!)
+
+        // set miss count text
+        updateMissCountMessage()
+
+        // prepare buttons
         prepareButtons()
 
         SudokuAppLog.exit(TAG, "onCreateView")
@@ -89,7 +112,8 @@ class SudokuFragment : BaseFragment(), View.OnClickListener {
 
             // back button
             if (view.id == back_button.id) {
-                mActivity.showToastMessage(R.string.sudoku_back_button_under_construction_toast_message)
+                mActivity.showToastMessage(R.string.sudoku_back_button_under_construction_toast_message,
+                    Toast.LENGTH_SHORT)
                 SudokuAppLog.exit(TAG, "onClick: back button tapped")
                 return
             }
@@ -135,5 +159,19 @@ class SudokuFragment : BaseFragment(), View.OnClickListener {
         }
 
         SudokuAppLog.exit(TAG, "prepareNumberButton")
+    }
+
+    /**
+     * update miss count text.
+     */
+    fun updateMissCountMessage() {
+        SudokuAppLog.enter(TAG, "updateMissCountMessage")
+
+        val missCountText = getString(R.string.sudoku_miss_count_text1) +
+                mActivity.mMissCount.toString() +
+                getString(R.string.sudoku_miss_count_text2)
+        miss_count.text = missCountText
+
+        SudokuAppLog.exit(TAG, "updateMissCountMessage")
     }
 }

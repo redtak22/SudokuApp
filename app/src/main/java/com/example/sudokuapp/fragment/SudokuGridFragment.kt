@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.sudokuapp.R
 import com.example.sudokuapp.activity.SudokuActivity
+import com.example.sudokuapp.const.SudokuProblem.Companion.EASY_1_ANSWER
 import com.example.sudokuapp.const.SudokuProblem.Companion.EASY_1_PROBLEM
 import com.example.sudokuapp.log.SudokuAppLog
 import com.example.sudokuapp.view.SudokuGridButton
+import kotlinx.android.synthetic.main.sudoku_fragment.*
 import kotlinx.android.synthetic.main.sudoku_grid_fragment.*
 
 /**
@@ -31,6 +34,9 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
     /** minimum grid first */
     private val MINIMUM_GRID_FIRST = 1
 
+    /** out of focusing position */
+    private val NOT_FOCUSING_POSITION = 0
+
     /** activity */
     private lateinit var mActivity: SudokuActivity
 
@@ -41,6 +47,7 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
     var mFocusCellX = 0
     /** Y position in focus cell */
     var mFocusCellY = 0
+
     /** focusing cell is hint or answer */
     private var mIsFocusCellHint = false
 
@@ -97,7 +104,7 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
     /**
      * prepare sudoku grid button.
      */
-    fun prepareSudokuGridButton() {
+    private fun prepareSudokuGridButton() {
         SudokuAppLog.enter(TAG, "setSudokuGridButton")
 
         // prepare sudoku grid button in below things
@@ -118,9 +125,12 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
                     mGridButtonArray[positionX][positionY]?.setOnClickListener(this)
                     // set and show hint number
                     mGridButtonArray[positionX][positionY]?.mHintNumber =
-                        EASY_1_PROBLEM[positionX][positionY]
+                        EASY_1_PROBLEM[positionY][positionX]
                     mGridButtonArray[positionX][positionY]?.text =
                         mGridButtonArray[positionX][positionY]?.mHintNumber
+                    // set answer number
+                    mGridButtonArray[positionX][positionY]?.mAnswerNumber =
+                        EASY_1_ANSWER[positionY][positionX]
                 }
             }
         }
@@ -153,16 +163,14 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
         SudokuAppLog.enter(TAG, "updateFocusCellLayout")
         SudokuAppLog.debug(TAG, "updateFocusCellLayout: mFocusCellX = $mFocusCellX, mFocusCellY = $mFocusCellY")
 
-        // update all cells color to default
-        for (positionX in GRID_FIRST..GRID_LAST) {
-            for (positionY in GRID_FIRST..GRID_LAST) {
-                // update all cells color
-                if (mGridButtonArray[positionX][positionY] != null) {
-                    mGridButtonArray[positionX][positionY]?.setBackgroundColor(
-                        mActivity.getColor(R.color.sudoku_grid_button_background))
-                }
-            }
+        // if not focusing cell, return the method
+        if (mFocusCellX == NOT_FOCUSING_POSITION && mFocusCellY == NOT_FOCUSING_POSITION) {
+            SudokuAppLog.exit(TAG, "updateFocusCellLayout: not focusing cell")
+            return
         }
+
+        // update all cells color to default
+        setAllCellsLayout(null, R.color.sudoku_grid_button_background)
 
         // update X axis and Y axis cells of new focus cell color
         for (position in GRID_FIRST..GRID_LAST) {
@@ -327,7 +335,7 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
         mGridButtonArray[mFocusCellX][mFocusCellY]?.setBackgroundColor(
             mActivity.getColor(R.color.sudoku_grid_focus_cell_background))
 
-        SudokuAppLog.exit(TAG, "updateFocusCell")
+        SudokuAppLog.exit(TAG, "updateFocusCellLayout")
     }
 
     /**
@@ -337,20 +345,54 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
     fun updateCellNumber(number: Int) {
         SudokuAppLog.enter(TAG, "updateCellNumber")
 
+        // if not focusing cell, return the method
+        if (mFocusCellX == 0 && mFocusCellY == 0) {
+            SudokuAppLog.exit(TAG, "updateCellNumber : not focusing cell")
+            return
+        }
+
         // if focusing cell is for hint, show toast and return the method
         if (mIsFocusCellHint) {
-            mActivity.showToastMessage(R.string.sudoku_hint_cell_update_alert_toast_message)
+            mActivity.showToastMessage(R.string.sudoku_hint_cell_update_alert_toast_message,
+                Toast.LENGTH_SHORT)
             SudokuAppLog.exit(TAG, "updateCellNumber : is hint cell")
             return
         }
 
-        // if during focusing cell, update focus cell number
-        if (mFocusCellX != 0 && mFocusCellY != 0) {
-            if (mGridButtonArray[mFocusCellX][mFocusCellY] != null) {
-                mGridButtonArray[mFocusCellX][mFocusCellY]?.setTextColor(
-                    mActivity.getColor(R.color.sudoku_grid_answer_cell_text_color))
-                mGridButtonArray[mFocusCellX][mFocusCellY]?.text = number.toString()
+        // update focus cell number
+        if (mGridButtonArray[mFocusCellX][mFocusCellY] != null) {
+            mGridButtonArray[mFocusCellX][mFocusCellY]?.setTextColor(
+                mActivity.getColor(R.color.sudoku_grid_answer_cell_text_color))
+            mGridButtonArray[mFocusCellX][mFocusCellY]?.text = number.toString()
+        }
+
+        // check input number is correct
+        if (number.toString() != mGridButtonArray[mFocusCellX][mFocusCellY]?.mAnswerNumber) {
+            // if is incorrect number, set text color
+            mGridButtonArray[mFocusCellX][mFocusCellY]?.setTextColor(
+                mActivity.getColor(R.color.sudoku_grid_answer_cell_incorrect_number_text_color))
+            // show toast message
+            mActivity.showToastMessage(R.string.sudoku_incorrect_number_toast_message,
+                Toast.LENGTH_SHORT)
+
+            // increase miss count
+            mActivity.mMissCount++
+            // check miss count is over
+            if (mActivity.mMissCount > 3) {
+                mActivity.finishGame(mActivity.FINISH_TYPE_MISS_COUNT_OVER)
+                SudokuAppLog.exit(TAG, "updateCellNumber : miss count is over")
+                return
             }
+            // set miss count text
+            mActivity.updateMissCountMessage()
+
+            SudokuAppLog.exit(TAG, "updateCellNumber : incorrect number")
+            return
+        }
+
+        // check other cells are answered
+        if (isAllCellsAnswer()) {
+            mActivity.finishGame(mActivity.FINISH_TYPE_GAME_CLEAR)
         }
 
         SudokuAppLog.exit(TAG, "updateCellNumber")
@@ -364,7 +406,7 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
 
         // if focusing cell is for hint, show toast and return the method
         if (mIsFocusCellHint) {
-            mActivity.showToastMessage(R.string.sudoku_hint_cell_erase_alert_toast_message)
+            mActivity.showToastMessage(R.string.sudoku_hint_cell_erase_alert_toast_message, Toast.LENGTH_SHORT)
             SudokuAppLog.exit(TAG, "eraseFocusCellNumber : is hint cell")
             return
         }
@@ -373,7 +415,71 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
         mGridButtonArray[mFocusCellX][mFocusCellY]?.text =
             mActivity.getString(R.string.sudoku_empty_cell)
 
+        // update cell background color
+        updateFocusCellLayout()
+
         SudokuAppLog.exit(TAG, "eraseFocusCellNumber")
+    }
+
+    /**
+     * check all cells are answered.
+     * @return true: all cells are answered (problem clear) / false: not
+     */
+    private fun isAllCellsAnswer() : Boolean {
+        SudokuAppLog.enter(TAG, "isAllCellsAnswer")
+
+        for (positionX in GRID_FIRST..GRID_LAST) {
+            for (positionY in GRID_FIRST..GRID_LAST) {
+                if (mGridButtonArray[positionX][positionY] != null) {
+                    // if not answered cell is existing, return false
+                    if (mGridButtonArray[positionX][positionY]?.text ==
+                            mActivity.getString(R.string.sudoku_empty_cell)) {
+                        SudokuAppLog.exit(TAG, "isAllCellsAnswer: false")
+                        return false
+                    }
+                }
+            }
+        }
+
+        SudokuAppLog.exit(TAG, "isAllCellsAnswer: true")
+        return true
+    }
+
+    /**
+     * set all cells text and background color.
+     * @param textColor text color (if not need change, set null)
+     * @param backgroundColor background color (if not need change, set null)
+     */
+    fun setAllCellsLayout(textColor: Int?, backgroundColor: Int?) {
+        SudokuAppLog.enter(TAG, "setAllCellsLayout")
+
+        // set text color
+        if (textColor != null) {
+            for (positionX in GRID_FIRST..GRID_LAST) {
+                for (positionY in GRID_FIRST..GRID_LAST) {
+                    // update all cells text color
+                    if (mGridButtonArray[positionX][positionY] != null) {
+                        mGridButtonArray[positionX][positionY]?.setTextColor(
+                            mActivity.getColor(textColor))
+                    }
+                }
+            }
+        }
+
+        // set background color
+        if (backgroundColor != null) {
+            for (positionX in GRID_FIRST..GRID_LAST) {
+                for (positionY in GRID_FIRST..GRID_LAST) {
+                    // update all cells text color
+                    if (mGridButtonArray[positionX][positionY] != null) {
+                        mGridButtonArray[positionX][positionY]?.setBackgroundColor(
+                            mActivity.getColor(backgroundColor))
+                    }
+                }
+            }
+        }
+
+        SudokuAppLog.exit(TAG, "setAllCellsLayout")
     }
 
 }

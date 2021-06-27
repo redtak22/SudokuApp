@@ -7,6 +7,7 @@
     android:background="@color/sudoku_background">
 
     <LinearLayout
+        android:id="@+id/sudoku_fragment_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -22,9 +23,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:textColor="@color/sudoku_stage_no_text_color"
-                android:textSize="@dimen/button_text_size"
+                android:textSize="@dimen/sudoku_difficulty_text_size"
                 android:fontFamily="@font/noto_serif_jp_regular"
-                android:text="aaa"
                 />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,8 +37,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:textColor="@color/sudoku_stage_no_text_color"
-                    android:textSize="@dimen/button_text_size"
-                    android:text="aaa"
+                    android:textSize="@dimen/sudoku_timer_text_size"
                     android:layout_weight="1"
                     />
                 <TextView
@@ -47,8 +46,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:textColor="@color/sudoku_stage_no_text_color"
-                    android:textSize="@dimen/button_text_size"
-                    android:text="aaa"
+                    android:textSize="@dimen/sudoku_miss_count_text_size"
                     android:layout_weight="1"
                     />
             </LinearLayout>
