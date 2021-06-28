@@ -44,32 +44,35 @@ class MainFragment : BaseFragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        SudokuAppLog.enter(TAG, "onCreateView")
+        SudokuAppLog.enter(TAG, "onViewCreated")
         super.onViewCreated(view, savedInstanceState)
 
         // easy button tapped
         easy_button.setOnClickListener {
             SudokuAppLog.debug(TAG, "easy button tapped.")
             // TODO: use Fragment
-            // change to sudoku screen
             mActivity.changeActivity(mActivity.SUDOKU_EASY)
         }
         // normal button tapped
         normal_button.setOnClickListener {
             SudokuAppLog.debug(TAG, "normal button tapped.")
             // TODO: use Fragment
-            // change to sudoku screen
             mActivity.changeActivity(mActivity.SUDOKU_NORMAL)
         }
         // hard button tapped
         hard_button.setOnClickListener {
-            SudokuAppLog.debug(TAG, "normal button tapped.")
+            SudokuAppLog.debug(TAG, "hard button tapped.")
             // TODO: use Fragment
-            // change to sudoku screen
             mActivity.changeActivity(mActivity.SUDOKU_HARD)
         }
+        // debug button tapped
+        debug_button.setOnClickListener {
+            SudokuAppLog.debug(TAG, "hard button tapped.")
+            // TODO: use Fragment
+            mActivity.changeActivity(mActivity.SUDOKU_DEBUG)
+        }
 
-        SudokuAppLog.exit(TAG, "onCreateView")
+        SudokuAppLog.exit(TAG, "onViewCreated")
     }
 
 }

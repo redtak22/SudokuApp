@@ -1,17 +1,16 @@
 package com.example.sudokuapp.fragment
 
 import android.os.Bundle
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.sudokuapp.R
 import com.example.sudokuapp.activity.SudokuActivity
-import com.example.sudokuapp.const.SudokuProblem.Companion.EASY_1_ANSWER
-import com.example.sudokuapp.const.SudokuProblem.Companion.EASY_1_PROBLEM
+import com.example.sudokuapp.const.SudokuProblem
 import com.example.sudokuapp.log.SudokuAppLog
 import com.example.sudokuapp.view.SudokuGridButton
-import kotlinx.android.synthetic.main.sudoku_fragment.*
 import kotlinx.android.synthetic.main.sudoku_grid_fragment.*
 
 /**
@@ -40,8 +39,15 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
     /** activity */
     private lateinit var mActivity: SudokuActivity
 
+    /** sudoku fragment */
+    private lateinit var mSudokuFragment: SudokuFragment
+
     /** grid button array */
     private var mGridButtonArray = Array(GRID_MAX) {arrayOfNulls<SudokuGridButton>(GRID_MAX)}
+    /** problem array */
+    private var mProblemArray = Array(GRID_MAX) {Array<String>(GRID_MAX) {" "} }
+    /** answer array */
+    private var mAnswerArray = Array(GRID_MAX) {Array<String>(GRID_MAX) {" "} }
 
     /** X position in focus cell */
     var mFocusCellX = 0
@@ -52,9 +58,33 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
     private var mIsFocusCellHint = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        SudokuAppLog.enter(TAG, "onCreate")
         super.onCreate(savedInstanceState)
+
         mActivity = activity as SudokuActivity
         mActivity.mSudokuGridFragment = this
+
+        // set problem and answer array
+        when (mActivity.mDifficultyKind) {
+            mActivity.SUDOKU_EASY -> {
+                mProblemArray = SudokuProblem.EASY_1_PROBLEM
+                mAnswerArray = SudokuProblem.EASY_1_ANSWER
+            }
+            mActivity.SUDOKU_NORMAL -> {
+                mProblemArray = SudokuProblem.NORMAL_1_PROBLEM
+                mAnswerArray = SudokuProblem.NORMAL_1_ANSWER
+            }
+            mActivity.SUDOKU_HARD -> {
+                mProblemArray = SudokuProblem.HARD_1_PROBLEM
+                mAnswerArray = SudokuProblem.HARD_1_ANSWER
+            }
+            mActivity.SUDOKU_DEBUG -> {
+                mProblemArray = SudokuProblem.DEBUG_1_PROBLEM
+                mAnswerArray = SudokuProblem.DEBUG_1_ANSWER
+            }
+        }
+
+        SudokuAppLog.exit(TAG, "onCreate")
     }
 
     override fun onCreateView(
@@ -80,8 +110,24 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
         SudokuAppLog.exit(TAG, "onViewCreated")
     }
 
+    override fun onStart() {
+        SudokuAppLog.enter(TAG, "onStart")
+        super.onStart()
+
+        // get sudoku fragment
+        mSudokuFragment = mActivity.mSudokuFragment
+
+        SudokuAppLog.exit(TAG, "onStart")
+    }
+
     override fun onClick(view: View?) {
         SudokuAppLog.enter(TAG, "onClick")
+
+        // if during playing game, finish the methos
+        if (mSudokuFragment.mGameStatus != mSudokuFragment.GAME_STATUS_PLAYING) {
+            SudokuAppLog.exit(TAG, "onClick: game is finished")
+            return
+        }
 
         if (view != null) {
             // identify tapped button
@@ -125,12 +171,12 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
                     mGridButtonArray[positionX][positionY]?.setOnClickListener(this)
                     // set and show hint number
                     mGridButtonArray[positionX][positionY]?.mHintNumber =
-                        EASY_1_PROBLEM[positionY][positionX]
+                        mProblemArray[positionY][positionX]
                     mGridButtonArray[positionX][positionY]?.text =
                         mGridButtonArray[positionX][positionY]?.mHintNumber
                     // set answer number
                     mGridButtonArray[positionX][positionY]?.mAnswerNumber =
-                        EASY_1_ANSWER[positionY][positionX]
+                        mAnswerArray[positionY][positionX]
                 }
             }
         }
@@ -376,15 +422,15 @@ class SudokuGridFragment : BaseFragment(), View.OnClickListener {
                 Toast.LENGTH_SHORT)
 
             // increase miss count
-            mActivity.mMissCount++
+            mSudokuFragment.mMissCount++
             // check miss count is over
-            if (mActivity.mMissCount > 3) {
+            if (mSudokuFragment.mMissCount > 3) {
                 mActivity.finishGame(mActivity.FINISH_TYPE_MISS_COUNT_OVER)
                 SudokuAppLog.exit(TAG, "updateCellNumber : miss count is over")
                 return
             }
             // set miss count text
-            mActivity.updateMissCountMessage()
+            mSudokuFragment.updateMissCountMessage()
 
             SudokuAppLog.exit(TAG, "updateCellNumber : incorrect number")
             return

@@ -39,34 +39,14 @@ class MainActivity : BaseActivity() {
 
     /**
      * change Activity.
-     * @param type screen kind
+     * @param difficultyKind difficulty kind
      */
-    fun changeActivity(type: Int) {
+    fun changeActivity(difficultyKind: Int) {
         SudokuAppLog.enter(TAG, "changeActivity")
 
-        // set difficulty type
-        when (type) {
-            // for easy sudoku screen
-            SUDOKU_EASY -> {
-                SudokuAppLog.debug(TAG, "changeActivity: screen type is sudoku easy")
-                mDifficultyStatus = SUDOKU_EASY
-            }
-            // for easy sudoku screen
-            SUDOKU_NORMAL -> {
-                SudokuAppLog.debug(TAG, "changeActivity: screen type is sudoku normal")
-                mDifficultyStatus = SUDOKU_NORMAL
-            }
-            // for hard sudoku screen
-            SUDOKU_NORMAL -> {
-                SudokuAppLog.debug(TAG, "changeActivity: screen type is sudoku hard")
-                mDifficultyStatus = SUDOKU_HARD
-            }
-            // other
-            else -> {
-                SudokuAppLog.warning(TAG, "changeActivity: change kind is incorrect")
-            }
-        }
+        // start activity
         val intent = Intent(this, SudokuActivity::class.java)
+        intent.putExtra(getString(R.string.KEY_DIFFICULTY_KIND), difficultyKind)
         startActivity(intent)
 
         SudokuAppLog.exit(TAG, "changeActivity")

@@ -7,7 +7,6 @@ import com.example.sudokuapp.fragment.SudokuFragment
 import com.example.sudokuapp.fragment.SudokuGridFragment
 import com.example.sudokuapp.log.SudokuAppLog
 import kotlinx.android.synthetic.main.sudoku_fragment.*
-import kotlinx.android.synthetic.main.sudoku_grid_fragment.*
 
 /**
  * SudokuActivity (for sudoku screen).
@@ -27,14 +26,17 @@ class SudokuActivity : BaseActivity() {
     /** sudoku grid fragment */
     lateinit var mSudokuGridFragment: SudokuGridFragment
 
-    /** miss count */
-    var mMissCount = 0
+    /** difficulty kind */
+    var mDifficultyKind: Int = SUDOKU_EASY
 
     override fun onCreate(savedInstanceState: Bundle?) {
         SudokuAppLog.enter(TAG, "onCreate")
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sudoku_layout)
+
+        // set difficulty
+        mDifficultyKind = intent.getIntExtra(getString(R.string.KEY_DIFFICULTY_KIND), SUDOKU_EASY)
 
         // in the first creating.
         if (savedInstanceState == null) {
@@ -77,9 +79,14 @@ class SudokuActivity : BaseActivity() {
         mSudokuGridFragment.mFocusCellX = 0
         mSudokuGridFragment.mFocusCellY = 0
 
+        // update game status
+        mSudokuFragment.mGameStatus = mSudokuFragment.GAME_STATUS_FINISH
+
         when (finishType) {
             // game clear
             FINISH_TYPE_GAME_CLEAR -> {
+                // stop timer
+                mSudokuFragment.handleTimer(false, false, true)
                 // set text and bckground color
                 mSudokuGridFragment.setAllCellsLayout(R.color.sudoku_grid_game_clear_text_color,
                     R.color.sudoku_grid_button_background)
@@ -90,6 +97,8 @@ class SudokuActivity : BaseActivity() {
             }
             // miss count over
             FINISH_TYPE_MISS_COUNT_OVER -> {
+                // stop timer
+                mSudokuFragment.handleTimer(false, false, false)
                 // set text and bckground color
                 mSudokuGridFragment.setAllCellsLayout(null,
                     R.color.sudoku_grid_miss_count_over_background_color)
@@ -105,12 +114,5 @@ class SudokuActivity : BaseActivity() {
         }
 
         SudokuAppLog.exit(TAG, "finishGame")
-    }
-
-    /**
-     * update miss count text. (call SudokuFragment's method)
-     */
-    fun updateMissCountMessage() {
-        mSudokuFragment.updateMissCountMessage()
     }
 }
